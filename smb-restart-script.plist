@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<!--
+    You should customize the following placeholders:
+- smb.restartDaily.service : Service name
+- SCRIPT_PATH : path where script file is located. 
+- LOG_PATH : path of log files
+
+-->
+
+<key>Label</key>
+<string>smb.restartDaily.service</string>
+
+<key>ProgramArguments</key>
+<array>
+  <string>/Users/admin/Documents/scriptsShell/smb_restart_script/smb-restart.sh</string>
+</array>
+
+<!--
+set RunAtLoad false if you don't want that script starts 
+automatically every time your mac os x boots
+-->
+<key>RunAtLoad</key>
+<true/>
+
+<key>WorkingDirectory</key>
+<string>/Users/admin/Documents/scriptsShell/smb_restart_script/</string>
+
+<key>StandardOutPath</key>
+<string>/Users/admin/Documents/scriptsShell/smb_restart_script/logs/boot-shutdown.log</string>
+
+<key>StandardErrorPath</key>
+<string>/Users/admin/Documents/scriptsShell/smb_restart_script/logs/boot-shutdown.err</string>
+
+<key>ExitTimeOut</key>
+<integer>600</integer>
+
+<key>StartCalendarInterval</key>
+	<dict>
+		<!-- <key>Weekday</key> deactivated -->
+		<!-- <integer></integer> deactivated, 0 y 7 is Sunday, 1 monday, etc -->
+		<key>Hour</key>
+		<integer>5</integer>
+		<key>Minute</key>
+		<integer>30</integer>
+	</dict>
+</dict>
+</plist>﻿
